@@ -4,15 +4,14 @@ class Solution {
             return 0;
         }
 
-        int right = 1;
+        int write=1;
+        //starting with index 1, as the first index element is always unique.
 
-        for (int left = 1; left < nums.length; left++) {
-            if (nums[left] != nums[left - 1]) {
-                nums[right] = nums[left];
-                right++;
-            }
-        }
+        for(int read=1; read<nums.length; read++)   
+            if(nums[read]!=nums[read-1]) 
+                nums[write++]=nums[read];
 
-        return right;
+        return write;
     }
+
 }
